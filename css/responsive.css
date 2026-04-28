@@ -5,6 +5,11 @@
     to { opacity: 1; transform: translateY(0); }
 }
 
+@keyframes heroMobileFade {
+    from { opacity: 0; transform: translateY(22px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
 html[data-js="true"] [data-reveal] { opacity: 0; transform: translateY(40px); transition: opacity 0.8s var(--ease), transform 0.8s var(--ease); }
 html[data-js="true"] [data-reveal].visible { opacity: 1; transform: translateY(0); }
 
@@ -34,15 +39,21 @@ html[data-js="true"] [data-reveal].visible { opacity: 1; transform: translateY(0
     .hero { min-height: auto; padding: 120px 0 60px; }
     .hero-content { grid-template-columns: 1fr; }
     .hero-right { display: none; }
+    .hero-canvas { opacity: 0.9; }
     .hero-badge,
     .hero-headline,
     .hero-subtext,
     .hero-buttons,
     .hero-metrics {
-        opacity: 1;
-        transform: none;
-        animation: none;
+        opacity: 0;
+        transform: translateY(22px);
+        animation: heroMobileFade 0.7s var(--ease) forwards;
     }
+    .hero-badge { animation-delay: 0.05s; }
+    .hero-headline { animation-delay: 0.15s; }
+    .hero-subtext { animation-delay: 0.28s; }
+    .hero-buttons { animation-delay: 0.4s; }
+    .hero-metrics { animation-delay: 0.52s; }
     .hero-headline { font-size: 2.2rem; }
     .services-grid,
     .divisions-grid,

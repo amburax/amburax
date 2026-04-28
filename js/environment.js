@@ -26,16 +26,31 @@ export function getPerformanceProfile() {
   const saveData = navigator.connection?.saveData ?? false;
   const deviceMemory = navigator.deviceMemory ?? 8;
   const hardwareConcurrency = navigator.hardwareConcurrency ?? 8;
+  const mobile = isMobileView();
   const lowPower = saveData || deviceMemory <= 4 || hardwareConcurrency <= 4;
   const mediumPower = !lowPower && (deviceMemory <= 8 || hardwareConcurrency <= 8);
+  const allowAmbientMotion = !saveData && !prefersReducedMotion() && (!mobile || (!lowPower && deviceMemory >= 4));
+  const heroIntensity = saveData
+    ? 0
+    : mobile
+      ? lowPower
+        ? 0.18
+        : mediumPower
+          ? 0.24
+          : 0.32
+      : lowPower
+        ? 0.45
+        : mediumPower
+          ? 0.72
+          : 1;
 
   return {
     saveData,
     lowPower,
     mediumPower,
-    allowAmbientMotion: !saveData && !isMobileView() && !prefersReducedMotion(),
+    allowAmbientMotion,
     allowHoverEffects: !prefersCoarsePointer() && !saveData && !prefersReducedMotion(),
-    heroIntensity: saveData ? 0 : lowPower ? 0.45 : mediumPower ? 0.72 : 1,
+    heroIntensity,
   };
 }
 

@@ -41,6 +41,10 @@ export class HeroEffects {
     return this.getProfile().allowAmbientMotion && this.heroInView && !document.hidden;
   }
 
+  isInteractiveMotionEnabled() {
+    return this.getProfile().allowHoverEffects && !this.media.isMobileView();
+  }
+
   resizeCanvas() {
     if (!this.heroCanvas || !this.heroCtx) {
       return;
@@ -184,7 +188,7 @@ export class HeroEffects {
 
   bindPointerTracking() {
     document.addEventListener('mousemove', (event) => {
-      if (!this.getProfile().allowHoverEffects || !this.heroCanvas || !this.shouldAnimate()) {
+      if (!this.isInteractiveMotionEnabled() || !this.heroCanvas || !this.shouldAnimate()) {
         return;
       }
 
@@ -197,7 +201,7 @@ export class HeroEffects {
   bindHoverEffects() {
     if (this.heroSection && this.glassCard) {
       this.heroSection.addEventListener('mousemove', (event) => {
-        if (!this.getProfile().allowHoverEffects || !this.shouldAnimate()) {
+        if (!this.isInteractiveMotionEnabled() || !this.shouldAnimate()) {
           return;
         }
 
@@ -227,7 +231,7 @@ export class HeroEffects {
       }
 
       card.addEventListener('mousemove', (event) => {
-        if (!this.getProfile().allowHoverEffects || !this.shouldAnimate()) {
+        if (!this.isInteractiveMotionEnabled() || !this.shouldAnimate()) {
           return;
         }
 
