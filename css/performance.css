@@ -1,0 +1,16 @@
+/* Rendering and performance-oriented rules */
+
+[data-defer-section] {
+    content-visibility: auto;
+    contain-intrinsic-size: 800px;
+}
+
+[data-contained] {
+    contain: layout paint;
+}
+
+.hero-canvas,
+.service-card-glow {
+    backface-visibility: hidden;
+    transform: translateZ(0);
+}

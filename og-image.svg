@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="40%" stop-color="#EEF2FF"/>
+      <stop offset="100%" stop-color="#F4F0FF"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#4F46E5"/>
+      <stop offset="100%" stop-color="#818CF8"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <circle cx="960" cy="140" r="180" fill="#4F46E5" opacity="0.08"/>
+  <circle cx="1040" cy="490" r="220" fill="#818CF8" opacity="0.08"/>
+  <g transform="translate(88 86)">
+    <rect width="82" height="82" rx="24" fill="#FFFFFF" stroke="#C7D2FE"/>
+    <path d="M41 10L66 22V60L41 72L16 60V22L41 10Z" stroke="#4F46E5" stroke-width="3" fill="none"/>
+    <path d="M41 10V72" stroke="#4F46E5" stroke-width="2" opacity="0.4"/>
+    <path d="M16 22L66 60" stroke="#4F46E5" stroke-width="2" opacity="0.4"/>
+    <path d="M66 22L16 60" stroke="#4F46E5" stroke-width="2" opacity="0.4"/>
+    <circle cx="41" cy="41" r="5.5" fill="#4F46E5" opacity="0.7"/>
+  </g>
+  <text x="88" y="226" fill="#111827" font-family="Inter, Arial, sans-serif" font-size="72" font-weight="800">
+    Amburax
+  </text>
+  <text x="88" y="320" fill="#111827" font-family="Inter, Arial, sans-serif" font-size="64" font-weight="800">
+    Custom ERP, AI Agents,
+  </text>
+  <text x="88" y="392" fill="url(#accent)" font-family="Inter, Arial, sans-serif" font-size="64" font-weight="800">
+    and Digital Platforms
+  </text>
+  <text x="88" y="476" fill="#6B7094" font-family="Inter, Arial, sans-serif" font-size="30">
+    Built for founders, COOs, and digital leaders who need cleaner operations,
+  </text>
+  <text x="88" y="516" fill="#6B7094" font-family="Inter, Arial, sans-serif" font-size="30">
+    stronger visibility, and systems their teams can finally rely on.
+  </text>
+  <rect x="88" y="554" width="270" height="16" rx="8" fill="#4F46E5" opacity="0.18"/>
+</svg>
