@@ -440,7 +440,16 @@
 }
 
 .consent-field input {
-    margin-top: 3px; accent-color: var(--accent-light);
+    flex: 0 0 auto;
+    width: 20px;
+    height: 20px;
+    margin-top: 2px;
+    accent-color: var(--accent-light);
+}
+
+.consent-field span {
+    flex: 1 1 auto;
+    min-width: 0;
 }
 
 .consent-field a,

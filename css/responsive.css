@@ -70,13 +70,42 @@ html[data-js="true"] [data-reveal].visible { opacity: 1; transform: translateY(0
     .metric-value { font-size: 1.2rem; }
     .statement-section { padding: 80px 0; }
     .agent-lines { grid-template-columns: 1fr; }
-    .cta-buttons { justify-content: stretch; }
+    .cta-buttons {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 12px;
+    }
+    .cta-buttons .btn {
+        width: 100%;
+        justify-content: center;
+    }
+    .consent-field {
+        gap: 10px;
+        align-items: flex-start;
+    }
+    .consent-field input {
+        margin-top: 4px;
+    }
+    .form-note,
+    .cta-legal-note {
+        text-align: left;
+    }
 }
 
 @media (max-width: 480px) {
     .hero-buttons { flex-direction: column; }
     .btn { width: 100%; justify-content: center; }
     .cta-contact-meta { flex-direction: column; gap: 8px; }
+    .contact-form-card { padding: 20px; }
+    .form-field input,
+    .form-field select,
+    .form-field textarea {
+        padding: 13px 14px;
+    }
+    .consent-field {
+        font-size: 0.84rem;
+        line-height: 1.65;
+    }
 }
 
 @media (prefers-reduced-motion: reduce) {
