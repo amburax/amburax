@@ -14,7 +14,7 @@ This project is a static site and can be deployed to platforms like Netlify, Ver
 
 ## Contact flow configuration
 
-The site uses `window.AMBURAX_CONFIG` for runtime overrides. If no direct form endpoint is configured, the inquiry form falls back to drafting an email to `hello@amburax.com`.
+The site uses `window.AMBURAX_CONFIG` for runtime overrides. If no direct form endpoint is configured, the inquiry form falls back to drafting an email to `amburax@gmail.com`.
 
 ## Cloudflare + Resend variables
 
@@ -28,7 +28,7 @@ Use these in Cloudflare Pages:
 Recommended values:
 
 - `RESEND_FROM_EMAIL`: a verified sender on your Resend domain, for example `website@yourdomain.com`
-- `CONTACT_TO_EMAIL`: the inbox that should receive inquiries, for example `hello@yourdomain.com`
+- `CONTACT_TO_EMAIL`: the inbox that should receive inquiries, for example `amburax@gmail.com`
 - `CONTACT_ALLOWED_ORIGIN`: your production origin, for example `https://www.amburax.com`
 
 If you want to allow both the root domain and `www`, set:
@@ -44,7 +44,7 @@ Example:
   window.AMBURAX_CONFIG = {
     contact: {
       endpoint: "https://your-secure-form-endpoint.example.com/inquiries",
-      recipient: "hello@amburax.com"
+      recipient: "amburax@gmail.com"
     },
     analytics: {
       enabled: true,

@@ -5,7 +5,7 @@ const defaultConfig = Object.freeze({
   },
   contact: {
     endpoint: ['127.0.0.1', 'localhost'].includes(window.location.hostname) ? '' : '/api/inquiries',
-    recipient: 'hello@amburax.com',
+    recipient: 'amburax@gmail.com',
     minSubmitDelayMs: 3500,
     minBriefLength: 40,
   },

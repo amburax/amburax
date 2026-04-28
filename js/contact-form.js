@@ -40,15 +40,28 @@ export function initContactForm({ contactForm, formNote }) {
     return;
   }
 
+  const submitButtonLabel = contactForm.querySelector('#btn-cta-start span');
   const startedAtField = document.getElementById('contact-started-at');
   const pageField = document.getElementById('contact-page');
   let startedTracked = false;
+  const usesSecureEndpoint = Boolean(siteConfig.contact.endpoint);
 
   resetTimingField(startedAtField);
 
   if (pageField) {
     pageField.value = window.location.href;
   }
+
+  if (submitButtonLabel) {
+    submitButtonLabel.textContent = usesSecureEndpoint ? 'Send Inquiry' : 'Draft Email Brief';
+  }
+
+  setFormNote(
+    formNote,
+    usesSecureEndpoint
+      ? 'Your message will be sent securely to Amburax. If delivery is temporarily unavailable, we will open an email fallback for you.'
+      : 'This local preview opens a drafted email instead of sending through the live secure endpoint.'
+  );
 
   contactForm.addEventListener('focusin', () => {
     if (startedTracked) {

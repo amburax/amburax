@@ -5,7 +5,7 @@ window.AMBURAX_CONFIG = {
   },
   contact: {
     endpoint: 'https://your-domain.example.com/api/inquiries',
-    recipient: 'hello@amburax.com',
+    recipient: 'amburax@gmail.com',
     minSubmitDelayMs: 3500,
     minBriefLength: 40,
   },
